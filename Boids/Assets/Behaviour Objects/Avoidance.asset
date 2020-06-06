@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 2891f79b2d6001e43a30af266620aaf9, type: 3}
   m_Name: Avoidance
-  m_EditorClassIdentifier: Assembly-CSharp::AvoidanceBehaviour
+  m_EditorClassIdentifier: 

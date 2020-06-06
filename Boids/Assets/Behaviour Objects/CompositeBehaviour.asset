@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CompositeBehaviour
   m_EditorClassIdentifier: 
   behaviours:
-  - {fileID: 11400000, guid: 77cb6c7c915c2a141b9d1a575c699f74, type: 2}
+  - {fileID: 11400000, guid: 9aa7db851c577094bb21ec07117f7f69, type: 2}
   - {fileID: 11400000, guid: 3f99cdbef06516d488b7a8a2f234be48, type: 2}
-  - {fileID: 11400000, guid: dca04f9871f8111439502ea33348b878, type: 2}
+  - {fileID: 11400000, guid: 8e3c614129db97047a962eb3f7c44d93, type: 2}
   - {fileID: 11400000, guid: b60fd7a956efedf4291ca2fabba70233, type: 2}
   weights:
   - 1

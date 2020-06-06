@@ -237,10 +237,10 @@ MonoBehaviour:
     type: 3}
   behaviour: {fileID: 11400000, guid: eaeb7719bd991d542a87c8d122834203, type: 2}
   initialCount: 268
-  kono_speedo_da: 10
-  maxo_speedo: 5
-  neighbour_radius_da: 1.39
-  avoidance_radius_multiplier_da: 1
+  flock_speed: 10
+  flock_speed_offset: 5
+  neighbour_radius: 2
+  avoidance_radius_multiplier: 1.01
 --- !u!4 &1665051486
 Transform:
   m_ObjectHideFlags: 0

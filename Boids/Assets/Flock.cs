@@ -15,13 +15,13 @@ public class Flock : MonoBehaviour
     const float FlockDensity = 0.08f;
 
     [Range(1f, 100f)]
-    public float kono_speedo_da = 10f;
+    public float flock_speed = 10f;
     [Range(1f, 100f)]
-    public float maxo_speedo = 5f;
+    public float flock_speed_offset = 5f;
     [Range(1f, 10f)]
-    public float neighbour_radius_da = 2f;
+    public float neighbour_radius = 2f;
     [Range(1f, 10f)]
-    public float avoidance_radius_multiplier_da = 0.5f;
+    public float avoidance_radius_multiplier = 0.5f;
 
     float squaremaxspeed;
     float squareNeighbourRadius;
@@ -35,9 +35,9 @@ public class Flock : MonoBehaviour
     }
     void Start()
     {
-        squaremaxspeed = maxo_speedo * maxo_speedo;
-        squareNeighbourRadius = neighbour_radius_da * neighbour_radius_da;
-        squareNeighbourRadius = avoidance_radius_multiplier_da * avoidance_radius_multiplier_da;
+        squaremaxspeed = flock_speed_offset * flock_speed_offset;
+        squareNeighbourRadius = neighbour_radius * neighbour_radius;
+        squareNeighbourRadius = avoidance_radius_multiplier * avoidance_radius_multiplier;
 
         //populate
         for(int i = 0; i < initialCount; i++)
@@ -61,10 +61,10 @@ public class Flock : MonoBehaviour
             List<Transform> context = GetNearbyObjects(bird);
             //bird.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.black, Color.white, context.Count / 3f);
             Vector2 move = behaviour.Decide(bird, context, this);
-            move *= kono_speedo_da;
+            move *= flock_speed;
             if (move.sqrMagnitude > squaremaxspeed)
             {
-                move = move.normalized * maxo_speedo;
+                move = move.normalized * flock_speed_offset;
             }
             bird.Adjust(move);
         }
@@ -73,7 +73,7 @@ public class Flock : MonoBehaviour
     List<Transform>GetNearbyObjects(Flock_Agent bird)
     {
         List<Transform> context = new List<Transform>();
-        Collider2D[] contextCollider = Physics2D.OverlapCircleAll(bird.transform.position, neighbour_radius_da);
+        Collider2D[] contextCollider = Physics2D.OverlapCircleAll(bird.transform.position, neighbour_radius);
         foreach(Collider2D c in contextCollider)
         {
             if (c != bird.AgentCollider)
